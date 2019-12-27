@@ -7,6 +7,7 @@ var container = $(".load");
 //button when clicked starts quiz
 $("#quiz").on("click", function () {
 
+    
     clear();
     timer();
     loadQuestions();
@@ -18,7 +19,7 @@ $("#quiz").on("click", function () {
 function clear() {
 
     $(".clear").empty();
-    $(".clear").css("background", "none");
+  //  $(".clear").css("background-image", "none");
 };
 
 
@@ -28,7 +29,7 @@ function timer() {
     
     var timeLeft = 75;
     var timeInterval = setInterval(function () {
-        countdown.text("Timer: " + timeLeft + " seconds remaining");
+        countdown.text("Time: " + timeLeft  );
 
         if (timeLeft > 0) {
             timeLeft--;
@@ -41,23 +42,26 @@ function timer() {
 //prints object from question.js onto index.html
 function loadQuestions() {
     var li = $("<ul>");
-    var ul1 = $("<li>");
-    var ul2 = $("<li>");
-    var ul3 = $("<li>")
-    var ul4 = $("<li>")
+  
      li.text(questions[0].title);
-    ul1.text(questions[0].choices[0]);
-    ul2.text(questions[0].choices[1]);
-    ul3.text(questions[0].choices[2]);
-    ul4.text(questions[0].choices[3]);
-
- 
-    container.append(li);
-    for (var i = 0; i < 4; i++) {
-        var ul1 = $("<li>");
-        ul1.text(questions[0].choices[i]);
     
-        li.append( ul1);
+     var hr = $("<hr>");
+   var classbtn = [ "btn", "btn-primary", "btn-lg"];
+
+
+    container.append(li);
+    li.append(hr);
+    
+    for (var i = 0; i < 4; i++) {
+        var ul1 = $("<ol>");
+        var btn = $("<button>");
+        var br = $("<br>")
+        btn.text(questions[0].choices[i]);
+       
+        ul1.append( br , btn   );
+        li.append( ul1 );
+        $('button').addClass('btn btn-warning btn-sm ');
+        
       }
 
 }
