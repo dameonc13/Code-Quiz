@@ -2,32 +2,38 @@
 <html lang="en">
 
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title> Code Quiz</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="./assets/script.js "></script>
+  <link rel="stylesheet" href="assets/style.css" />
+  
 
 </head>
 
 <body>
+ 
+    <nav class="nav  flex-column flex-sm-row">
+      <a class="flex-sm-fill text-sm-center nav-link active" href="Highscore.html">Highscore</a>
 
-  <nav class="nav  flex-column flex-sm-row">
-    <a class="flex-sm-fill text-sm-center nav-link active"  href="Highscore.html">Highscore</a>
+      <a class="flex-sm-fill text-sm-center nav-link disabled" id = "count" >Timer </a>
+    </nav>
+    <div class="text-center clear load ">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 ">Code Quiz</h1>
+        <p class="lead">The quiz will be timed once the button is clicked.
+          Any incorrect answer will result in -10 from time.</p>
+        <p class="lead"> Your score will be the time remain. Submit a name to save your score.</p>
 
-    <a class="flex-sm-fill text-sm-center nav-link disabled"  id="count">Time </a>
-  </nav>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Code Quiz</h1>
-      <p class="lead">The quiz will be timed once the button is clicked.
-        Any incorrect answer will result in -10 from time.</p>
-      <p class="lead"> Your score will be the time remain. Submit a name to save your score.</p>
-      <button>Code Quiz</button>
+      </div>
     </div>
+    <button id="quiz" class="btn btn-primary btn-lg clear">Code Quiz</button>
   </div>
-
+  <script src="./assets/script.js "></script>
+  <script src="./assets/question.js "></script>
 </body>
+
+</html>
